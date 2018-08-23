@@ -1,0 +1,50 @@
+<h1>Edit Vinyl</h1>
+
+<p>
+  <%= link_to 'Cancel', vinyl_index_path %>
+</p>
+
+<%= form_with(model: @vinyl, local: true) do |form| %>
+  <p>
+    <%= form.label :artist %><br>
+    <%= form.text_field :artist %>
+  </p>
+
+  <p>
+    <%= form.label :album %><br>
+    <%= form.text_field :album %>
+  </p>
+
+  <p>
+    <%= form.label :year_released %><br>
+    <%= form.number_field :year_released %>
+  </p>
+
+  <p>
+    <%= form.label :year_printed %><br>
+    <%= form.number_field :year_printed %>
+  </p>
+
+  <p>
+    <%= form.label :condition %><br>
+    <%= form.select :condition, ["", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"] %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<% if @vinyl.errors.any? %>
+  <div id="error_explanation">
+    <strong>
+      <%= pluralize(@vinyl.errors.count, "error") %> prohibited
+      this vinyl from being saved:
+    </strong>
+    <ul>
+      <% @vinyl.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
