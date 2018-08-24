@@ -28,3 +28,22 @@
   <strong>Condition:</strong>
   <%= @vinyl.condition %>
 </p>
+
+<strong>Tracks</strong>
+<% @vinyl.tracks.each do |track| %>
+  <p>
+    <strong>Title:</strong>
+    <%= track.title%>
+  </p>
+<% end %>
+
+<strong>Add a track:</strong>
+<%= form_with(model: [ @vinyl, @vinyl.tracks.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

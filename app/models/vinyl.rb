@@ -1,4 +1,5 @@
 class Vinyl < ApplicationRecord
+  has_many :tracks
   validates :artist, presence: true
   validates :album, presence: true
   validates :year_printed, presence: true, numericality: {greater_than_or_equal_to: 1900, less_than_or_equal_to: Time.current.year}
