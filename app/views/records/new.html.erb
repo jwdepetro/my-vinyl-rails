@@ -1,44 +1,44 @@
-<h1>New Record</h1>
+<div class="container">
+  <h1>New Record</h1>
 
-<p>
-  <%= link_to 'Cancel', records_path %>
-</p>
+  <p>
+    <%= link_to 'Cancel', records_path %>
+  </p>
 
-<%= form_with scope: :record, url: records_path, local: true do |form| %>
-  <p>
-    <%= form.label :artist %><br>
-    <%= form.text_field :artist %>
-  </p>
-  <p>
-    <%= form.label :album %><br>
-    <%= form.text_field :album %>
-  </p>
-  <p>
-    <%= form.label :year_released %><br>
-    <%= form.number_field :year_released %>
-  </p>
-  <p>
-    <%= form.label :year_printed %><br>
-    <%= form.number_field :year_printed %>
-  </p>
-  <p>
-    <%= form.label :condition %><br>
-    <%= form.select :condition, ["", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"] %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+  <%= form_with scope: :record, url: records_path, local: true do |form| %>
+    <div class="form-group">
+      <%= form.label :artist %>
+      <%= form.text_field :artist, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :album %>
+      <%= form.text_field :album, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :year_released %>
+      <%= form.number_field :year_released, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :year_printed %>
+      <%= form.number_field :year_printed, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :condition %>
+      <%= form.select(:condition, ["", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], {}, {:class => "form-control"}) %>
+    </div>
+    <%= form.submit :class => "btn btn-primary" %>
+  <% end %>
 
-<% if @record.errors.any? %>
-  <div id="error_explanation">
-    <strong>
-      <%= pluralize(@record.errors.count, "error") %> prohibited this record from being saved:
-    </strong>
-    <ul>
-      <% @record.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+  <% if @record.errors.any? %>
+    <div id="error_explanation">
+      <strong>
+        <%= pluralize(@record.errors.count, "error") %> prohibited this record from being saved:
+      </strong>
+      <ul>
+        <% @record.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>

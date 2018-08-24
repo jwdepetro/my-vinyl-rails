@@ -1,37 +1,39 @@
-<p>
-  <%= link_to 'Edit', edit_record_path(@record) %> |
-  <%= link_to 'Back', records_path %>
-</p>
+<div class="container">
+  <p>
+    <%= link_to 'Edit', edit_record_path(@record) %> |
+    <%= link_to 'Back', records_path %>
+  </p>
 
-<p>
-  <strong>Artist:</strong>
-  <%= @record.artist %>
-</p>
+  <p>
+    <strong>Artist:</strong>
+    <%= @record.artist %>
+  </p>
 
-<p>
-  <strong>Album:</strong>
-  <%= @record.album %>
-</p>
+  <p>
+    <strong>Album:</strong>
+    <%= @record.album %>
+  </p>
 
-<p>
-  <strong>Year Released:</strong>
-  <%= @record.year_released %>
-</p>
+  <p>
+    <strong>Year Released:</strong>
+    <%= @record.year_released %>
+  </p>
 
-<p>
-  <strong>Year Printed:</strong>
-  <%= @record.year_printed %>
-</p>
+  <p>
+    <strong>Year Printed:</strong>
+    <%= @record.year_printed %>
+  </p>
 
-<p>
-  <strong>Condition:</strong>
-  <%= @record.condition %>
-</p>
+  <p>
+    <strong>Condition:</strong>
+    <%= @record.condition %>
+  </p>
 
-<strong>Tracks</strong>
+  <strong>Tracks</strong>
 
-<%= render @record.tracks %>
+  <%= render @record.tracks %>
 
-<strong> Add a track:</strong>
+  <strong> Add a track:</strong>
 
-<%= render 'tracks/form' %>
+  <%= render 'tracks/form' %>
+</div>
