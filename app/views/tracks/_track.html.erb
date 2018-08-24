@@ -1,7 +1,10 @@
-<p>
-  <strong>Title:</strong>
-  <%= track.title %>
-  <%= link_to 'Destroy Track', [track.record, track],
-              method: :delete,
-              data: {confirm: 'Are you sure?'} %>
-</p>
+<div class="row pb-2">
+  <li class="col-6">
+    <%= track.title %>
+  </li>
+  <div class="col-6 text-right">
+    <%= link_to 'Destroy Track', [track.record, track],
+                method: :delete,
+                data: {confirm: 'Are you sure?'} %>
+  </div>
+</div>

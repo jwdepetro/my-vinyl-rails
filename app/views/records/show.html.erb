@@ -1,39 +1,64 @@
 <div class="container">
-  <p>
-    <%= link_to 'Edit', edit_record_path(@record) %> |
-    <%= link_to 'Back', records_path %>
-  </p>
+  <div class="row justify-content-center">
+    <div class="col-8 col-md-5">
+      <p>
+        <%= link_to 'Edit', edit_record_path(@record) %> |
+        <%= link_to 'Back', records_path %>
+      </p>
+      <div class="row pb-2">
+        <div class="col-4">
+          <strong>Artist:</strong>
+        </div>
+        <div class="col-8 text-right">
+          <%= @record.artist %>
+        </div>
+      </div>
+      <div class="row pb-2">
+        <div class="col-4">
+          <strong>Album:</strong>
+        </div>
+        <div class="col-8 text-right">
+          <%= @record.album %>
+        </div>
+      </div>
+      <div class="row pb-2">
+        <div class="col-4">
+          <strong>Year Released:</strong>
+        </div>
+        <div class="col-8 text-right">
+          <%= @record.year_released %>
+        </div>
+      </div>
+      <div class="row pb-2">
+        <div class="col-4">
+          <strong>Year Printed:</strong>
+        </div>
+        <div class="col-8 text-right">
+          <%= @record.year_printed %>
+        </div>
+      </div>
+      <div class="row pb-2">
+        <div class="col-4">
+          <strong>Condition:</strong>
+        </div>
+        <div class="col-8 text-right">
+          <%= @record.condition %>
+        </div>
+      </div>
 
-  <p>
-    <strong>Artist:</strong>
-    <%= @record.artist %>
-  </p>
+      <hr class="my-4">
 
-  <p>
-    <strong>Album:</strong>
-    <%= @record.album %>
-  </p>
+      <p>
+        <strong>Tracks:</strong>
+      </p>
 
-  <p>
-    <strong>Year Released:</strong>
-    <%= @record.year_released %>
-  </p>
+      <%= render @record.tracks %>
 
-  <p>
-    <strong>Year Printed:</strong>
-    <%= @record.year_printed %>
-  </p>
+      <p>
+        <strong>Add a track:</strong>
+      </p>
 
-  <p>
-    <strong>Condition:</strong>
-    <%= @record.condition %>
-  </p>
-
-  <strong>Tracks</strong>
-
-  <%= render @record.tracks %>
-
-  <strong> Add a track:</strong>
-
-  <%= render 'tracks/form' %>
+      <%= render 'tracks/form' %>
+    </div>
+  </div>
 </div>

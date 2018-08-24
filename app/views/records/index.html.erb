@@ -1,9 +1,11 @@
-<h1>Record Collection</h1>
-
-<p>
-  <%= link_to 'Add Record', new_record_path %>
-</p>
-
+<div class="jumbotron">
+  <h1 class="display-3">Record Collection</h1>
+  <p class="lead">
+    This is a simple application where you can manage your record collection.
+  </p>
+  <hr class="my-4">
+  <%= link_to 'Add Record', new_record_path, :class => "btn btn-primary btn-lg" %>
+</div>
 <table class="table">
   <tr>
     <th>Artist</th>
@@ -15,7 +17,6 @@
     <th></th>
     <th></th>
   </tr>
-
   <% @records.each do |record| %>
     <tr>
       <td><%= record.artist %></td>
