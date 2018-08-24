@@ -30,14 +30,4 @@ ActiveRecord::Schema.define(version: 2018_08_24_020317) do
     t.index ["record_id"], name: "index_tracks_on_record_id"
   end
 
-  create_table "vinyls", force: :cascade do |t|
-    t.string "artist"
-    t.string "album"
-    t.integer "year_released"
-    t.integer "year_printed"
-    t.integer "condition"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end
