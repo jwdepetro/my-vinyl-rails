@@ -1,0 +1,7 @@
+<p>
+  <strong>Title:</strong>
+  <%= track.title %>
+  <%= link_to 'Destroy Track', [track.record, track],
+              method: :delete,
+              data: {confirm: 'Are you sure?'} %>
+</p>

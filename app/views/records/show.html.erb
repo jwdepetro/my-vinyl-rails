@@ -30,21 +30,8 @@
 
 <strong>Tracks</strong>
 
-<% @record.tracks.each do |track| %>
-  <p>
-    <strong>Title:</strong>
-    <%= track.title %>
-  </p>
-<% end %>
+<%= render @record.tracks %>
 
 <strong> Add a track:</strong>
 
-<%= form_with(model: [@record, @record.tracks.build], local: true) do |form| %>
-  <p>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= render 'tracks/form' %>

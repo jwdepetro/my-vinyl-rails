@@ -1,5 +1,5 @@
 class Record < ApplicationRecord
-  has_many :tracks
+  has_many :tracks, dependent: :destroy
   validates :artist, presence: true
   validates :album, presence: true
   validates :year_printed, presence: true, numericality: {greater_than_or_equal_to: 1900, less_than_or_equal_to: Time.current.year}

@@ -6,6 +6,13 @@ class TracksController < ApplicationController
     redirect_to record_path(@record)
   end
 
+  def destroy
+    @record = Record.find(params[:record_id])
+    @track = @record.tracks.find(params[:id])
+    @track.destroy
+    redirect_to record_path(@record)
+  end
+
   private
 
   def track_params
