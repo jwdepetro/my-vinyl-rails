@@ -1,9 +1,10 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-8 col-md-5">
+      <h1><%= @record.album %></h1>
       <p>
         <%= link_to 'Edit', edit_record_path(@record) %> |
-        <%= link_to 'Back', records_path %>
+        <%= link_to 'Records', records_path %>
       </p>
       <div class="row pb-2">
         <div class="col-4">
