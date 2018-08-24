@@ -1,5 +1,7 @@
 class TracksController < ApplicationController
 
+  http_basic_authenticate_with name: "user", password: "pass"
+
   def create
     @record = Record.find(params[:record_id])
     @track = @record.tracks.create(track_params)

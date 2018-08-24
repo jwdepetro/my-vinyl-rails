@@ -1,5 +1,7 @@
 class RecordsController < ApplicationController
 
+  http_basic_authenticate_with name: "user", password: "pass"
+
   def index
     @records = Record.all
   end

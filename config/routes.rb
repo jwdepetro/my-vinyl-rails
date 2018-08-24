@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'login/index'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :records do
     resources :tracks
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'login#index'
+  root 'records#index'
 end
