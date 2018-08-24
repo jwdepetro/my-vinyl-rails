@@ -2,7 +2,7 @@ class CreateTracks < ActiveRecord::Migration[5.2]
   def change
     create_table :tracks do |t|
       t.string :title
-      t.references :vinyl, foreign_key: true
+      t.references :record, foreign_key: true
 
       t.timestamps
     end

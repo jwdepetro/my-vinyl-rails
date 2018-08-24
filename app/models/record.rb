@@ -1,4 +1,4 @@
-class Vinyl < ApplicationRecord
+class Record < ApplicationRecord
   has_many :tracks
   validates :artist, presence: true
   validates :album, presence: true

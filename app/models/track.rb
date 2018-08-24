@@ -1,3 +1,3 @@
 class Track < ApplicationRecord
-  belongs_to :vinyl
+  belongs_to :record
 end

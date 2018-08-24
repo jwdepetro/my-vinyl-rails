@@ -2,8 +2,8 @@
 
 one:
   title: MyString
-  vinyl: one
+  record: one
 
 two:
   title: MyString
-  vinyl: two
+  record: two

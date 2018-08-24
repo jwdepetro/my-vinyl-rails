@@ -1,9 +1,9 @@
 class TracksController < ApplicationController
 
   def create
-    @vinyl = Vinyl.find(params[:vinyl_id])
-    @track = @vinyl.tracks.create(track_params)
-    redirect_to vinyl_path(@vinyl)
+    @record = Record.find(params[:record_id])
+    @track = @record.tracks.create(track_params)
+    redirect_to record_path(@record)
   end
 
   private
